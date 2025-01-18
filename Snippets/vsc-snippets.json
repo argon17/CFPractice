@@ -1,0 +1,27 @@
+{
+    "C++ Template": {
+        "prefix": "cpptemplate",
+        "body": [
+            "#include <bits/stdc++.h>",
+            "#define int long long",
+            "using namespace std;",
+            "",
+            "void solve()",
+            "{",
+            "    $0",
+            "}",
+            "",
+            "int32_t main()",
+            "{",
+            "    int t;",
+            "    t = 1;",
+            "    cin >> t;",
+            "    while (t--)",
+            "    {",
+            "        solve();",
+            "    }",
+            "}"
+        ],
+        "description": "Basic C++ template with problem-solving structure"
+    }
+}
