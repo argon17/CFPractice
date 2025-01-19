@@ -5,6 +5,7 @@
 #define debug(...) { };
 #endif
 #define int long long
+#define endl '\n'
 using namespace std;
 
 void solve()

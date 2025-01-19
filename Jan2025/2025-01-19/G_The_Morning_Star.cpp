@@ -5,35 +5,32 @@ using namespace std;
 void solve()
 {
     int n; cin>>n;
-    map<int32_t, int32_t> ew, ns;
-    map<int32_t, int32_t> nec, nwc;
+    // using unordered_map instead of map will give TLE
+    map<int, int> ew, ns;
+    map<int, int> nec, nwc;
     for(int i=0; i<n; i++){
         int x, y; cin>>x>>y;
+        // parallel to y axis
         ew[x]++;
+        // parallel to x axis
         ns[y]++;
+        // with slope -1
         nwc[x+y]++;
+        // with slope 1
         nec[x-y]++;
     }
     int ans = 0;
     for(auto i: ew){
-        int temp = i.second;
-        if(temp>1)
-        ans += temp*(temp-1);
+        ans += i.second*(i.second-1);
     }
     for(auto i: ns){
-        int temp = i.second;
-        if(temp>1)
-        ans += temp*(temp-1);
+        ans += i.second*(i.second-1);
     }
     for(auto i: nec){
-        int temp = i.second;
-        if(temp>1)
-        ans += temp*(temp-1);
+        ans += i.second*(i.second-1);
     }
     for(auto i: nwc){
-        int temp = i.second;
-        if(temp>1)
-        ans += temp*(temp-1);
+        ans += i.second*(i.second-1);
     }
     cout<<ans<<endl;
 }
