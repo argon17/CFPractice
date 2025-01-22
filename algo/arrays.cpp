@@ -27,3 +27,24 @@ int inversionCount(vector<int> &arr)
 
     return inversions;
 }
+
+int countSubArraysWithSumK(vector<int> &arr, int k)
+{
+    // Count the number of subarrays with sum equal to k
+    // Example: For array {1, 2, 3, 4, 5} and k = 5, the answer is 2 (subarrays: {2, 3}, {5})
+
+    int n = arr.size();
+    int ans = 0;
+    int prefixSum = 0;
+    unordered_map<int, int> prefixSumCount;
+    prefixSumCount[0] = 1;
+
+    for (int i = 0; i < n; ++i)
+    {
+        prefixSum += arr[i];
+        ans += prefixSumCount[prefixSum - k];
+        prefixSumCount[prefixSum]++;
+    }
+
+    return ans;
+}
