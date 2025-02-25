@@ -18,3 +18,8 @@ map<int, int> primeFactors(int n)
     }
     return factors;
 }
+
+int powerOf2LessThanN(int n)
+{
+    return 1 << (31 - __builtin_clz(n - 1));
+}
